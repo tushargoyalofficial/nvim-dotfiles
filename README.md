@@ -24,7 +24,7 @@ Requires Neovim (>= 0.5)
 - [defx.nvim](https://github.com/Shougo/defx.nvim) - A file explorer
 
 ## Shell setup (macOS & Linux)
-`
+
 - [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. I use Hack.
 - [Exa](https://the.exa.website/) - `ls` replacement
 - [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
