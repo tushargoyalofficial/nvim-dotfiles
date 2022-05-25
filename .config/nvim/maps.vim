@@ -77,6 +77,6 @@ nmap rn <Plug>(coc-rename)
 "------------------------------
 " NVIM tree realted mappings
 
-nnoremap <C-b> :NvimTreeToggle<CR>
-nnoremap <silent> R :NvimTreeRefresh<CR>
-nnoremap <C-f> :NvimTreeFindFile<CR>
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <silent>R :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
