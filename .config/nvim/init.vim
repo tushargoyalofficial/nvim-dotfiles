@@ -8,9 +8,10 @@ scriptencoding utf-8
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 
+syntax enable
 set nocompatible
 set number
-syntax enable
+set relativenumber
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
 set title
@@ -23,9 +24,10 @@ set cmdheight=1
 set laststatus=2
 set scrolloff=10
 set expandtab
-"let loaded_matchparen = 1
-set shell=fish
+set shell=zsh
 set backupskip=/tmp/*,/private/tmp/*
+set noswapfile
+set clipboard+=unnamedplus
 
 " incremental substitution (neovim)
 if has('nvim')
@@ -138,10 +140,9 @@ if exists("&termguicolors") && exists("&winblend")
   set wildoptions=pum
   set pumblend=5
   set background=dark
-  " Use NeoSolarized
-  let g:neosolarized_termtrans=1
-  runtime ./colors/NeoSolarized.vim
-  colorscheme NeoSolarized
+
+  " Setting nightfox as color scheme
+  colorscheme nightfox
 endif
 
 "}}}
