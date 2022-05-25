@@ -158,8 +158,12 @@ if exists("&termguicolors") && exists("&winblend")
   set pumblend=5
   set background=dark
 
-  " Setting nightfox as color scheme
-  colorscheme nightfox
+  " Setting nightfly as color scheme
+  colorscheme nightfly
+  let g:nightflyCursorColor = 1
+  let g:nightflyNormalFloat = 1
+  let g:nightflyUnderlineMatchParen = 1
+  let g:nightflyWinSeparator = 2
 endif
 
 "}}}
