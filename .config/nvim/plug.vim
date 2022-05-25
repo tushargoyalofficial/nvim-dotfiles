@@ -28,7 +28,7 @@ if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
-  Plug 'scrooloose/nerdtree'
+  Plug 'kyazdani42/nvim-tree.lua'
   Plug 'bluz71/vim-nightfly-guicolors'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -37,6 +37,7 @@ if has("nvim")
   Plug 'natebosch/vim-lsc-dart'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'akinsho/flutter-tools.nvim'
+  Plug 'lewis6991/gitsigns.nvim'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }

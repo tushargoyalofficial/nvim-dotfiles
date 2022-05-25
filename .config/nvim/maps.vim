@@ -73,3 +73,10 @@ nnoremap <silent> <space>s :<C-u>CocList -I symbols<cr>
 nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
 nmap do <Plug>(coc-codeaction)
 nmap rn <Plug>(coc-rename)
+
+"------------------------------
+" NVIM tree realted mappings
+
+nnoremap <C-b> :NvimTreeToggle<CR>
+nnoremap <silent> R :NvimTreeRefresh<CR>
+nnoremap <C-f> :NvimTreeFindFile<CR>
