@@ -28,8 +28,13 @@ if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
+  Plug 'scrooloose/nerdtree'
   Plug 'EdenEast/nightfox.nvim'
   Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'dart-lang/dart-vim-plugin'
+  Plug 'natebosch/vim-lsc'
+  Plug 'natebosch/vim-lsc-dart'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }

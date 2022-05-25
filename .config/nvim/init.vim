@@ -29,6 +29,23 @@ set backupskip=/tmp/*,/private/tmp/*
 set noswapfile
 set clipboard+=unnamedplus
 
+let g:coc_global_extensions = [
+  \ 'coc-emmet',
+  \ 'coc-css',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-tsserver',
+  \ 'coc-yaml',
+  \ 'coc-snippets',
+  \ ]
+
+" vim-lsc/vim-lsc-dart default mappings
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
+let g:lsc_enable_autocomplete = v:true
+let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
+
 " incremental substitution (neovim)
 if has('nvim')
   set inccommand=split
