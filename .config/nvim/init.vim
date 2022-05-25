@@ -41,10 +41,15 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ ]
 
+" dart-vim-plugin configs
+let g:dart_html_in_string = v:true
+let g:dart_style_guide = 2
+let g:dart_format_on_save = 1
+
 " vim-lsc/vim-lsc-dart default mappings
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
 let g:lsc_enable_autocomplete = v:true
-let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
+let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<silent>lr'}
 
 " incremental substitution (neovim)
 if has('nvim')
