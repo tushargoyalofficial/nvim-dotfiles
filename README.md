@@ -22,6 +22,9 @@ Requires Neovim (>= 0.5)
   - It is used for installing an LSP server for Tailwind CSS
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - A highly extendable fuzzy finder over lists
 - [defx.nvim](https://github.com/Shougo/defx.nvim) - A file explorer
+- [coc-nvim](https://github.com/neoclide/coc.nvim) - True snippet and additional text editing support
+- [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - This plugin adds indentation guides to all lines (including empty lines). 
+- [fzf](https://github.com/junegunn/fzf) - fzf is a general-purpose command-line fuzzy finder.
 
 ## Shell setup (macOS & Linux)
 

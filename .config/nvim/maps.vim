@@ -80,3 +80,7 @@ nmap rn <Plug>(coc-rename)
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <silent>R :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
+
+"------------------------------
+" FZF global file search based on keywork mapping
+nnoremap <C-g> :Ag<Cr>

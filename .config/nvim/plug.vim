@@ -38,6 +38,8 @@ if has("nvim")
   Plug 'nvim-lua/plenary.nvim'
   Plug 'akinsho/flutter-tools.nvim'
   Plug 'lewis6991/gitsigns.nvim'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
