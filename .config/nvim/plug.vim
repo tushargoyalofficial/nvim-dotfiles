@@ -40,6 +40,7 @@ if has("nvim")
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'numToStr/Comment.nvim'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
