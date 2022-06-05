@@ -26,7 +26,7 @@ set scrolloff=10
 set expandtab
 set shell=zsh
 set backupskip=/tmp/*,/private/tmp/*
-set noswapfile
+set noswapfile nobackup
 set clipboard+=unnamedplus
 
 let g:coc_global_extensions = [
@@ -50,6 +50,13 @@ let g:dart_format_on_save = 1
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
 let g:lsc_enable_autocomplete = v:true
 let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<silent>lr'}
+
+" the silver searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" terminal italics
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 
 " incremental substitution (neovim)
 if has('nvim')
@@ -158,17 +165,23 @@ runtime ./maps.vim
 if exists("&termguicolors") && exists("&winblend")
   syntax enable
   set termguicolors
+
   set winblend=0
   set wildoptions=pum
   set pumblend=5
   set background=dark
 
   " Setting nightfly as color scheme
-  colorscheme nightfly
   let g:nightflyCursorColor = 1
   let g:nightflyNormalFloat = 1
   let g:nightflyUnderlineMatchParen = 1
   let g:nightflyWinSeparator = 2
+  let g:nightflyItalics = 1
+  set fillchars=horiz:━,horizup:┻,horizdown:┳,vert:┃,vertleft:┨,vertright:┣,verthoriz:╋
+
+  runtime ./colors/nightfly.vim
+  colorscheme nightfly
+
 endif
 
 "}}}

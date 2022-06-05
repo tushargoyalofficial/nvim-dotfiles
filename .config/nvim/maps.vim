@@ -18,6 +18,11 @@ nmap <C-a> gg<S-v>G
 " Save with root permission
 command! W w !sudo tee > /dev/null %
 
+" Normal commands
+nnoremap <C-s> :w<CR>
+nnoremap <C-q> :q!<CR>
+nnoremap <F4> :bd<CR>
+
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
@@ -83,4 +88,7 @@ nnoremap <leader>n :NvimTreeFindFile<CR>
 
 "------------------------------
 " FZF global file search based on keywork mapping
-nnoremap <C-g> :Ag<Cr>
+nnoremap <C-g> :Ag<CR>
+nnoremap <silent>sl :Buffers<CR>
+" nnoremap <C-g> :GFiles --exclude-standard --others --cached<Cr>
+" nnoremap <expr> <C-g> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<Cr>"

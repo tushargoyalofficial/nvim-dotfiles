@@ -29,13 +29,11 @@ if has("nvim")
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'kyazdani42/nvim-tree.lua'
-  Plug 'bluz71/vim-nightfly-guicolors'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'dart-lang/dart-vim-plugin'
   Plug 'natebosch/vim-lsc'
   Plug 'natebosch/vim-lsc-dart'
-  Plug 'nvim-lua/plenary.nvim'
   Plug 'akinsho/flutter-tools.nvim'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
