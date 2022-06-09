@@ -230,9 +230,11 @@ exec 'highlight Structure guifg=' . s:indigo . 'gui=italic'
 " Statusline, splits and tab lines
 exec 'highlight StatusLine cterm=none guibg=' . s:slate_blue . ' guifg=' . s:white . ' gui=none'
 exec 'highlight StatusLineNC cterm=none guibg=' . s:slate_blue . ' guifg=' . s:cadet_blue . ' gui=none'
-exec 'highlight Tabline cterm=none guibg=' . s:slate_blue . ' guifg=' . s:cadet_blue . ' gui=none'
-exec 'highlight TablineSel cterm=none guibg=' . s:slate_blue . ' guifg=' . s:blue . ' gui=none'
-exec 'highlight TablineFill cterm=none guibg=' . s:slate_blue . ' guifg=' . s:slate_blue . ' gui=none'
+exec 'highlight Tabline cterm=none guibg=' . s:regal_blue . ' guifg=' . s:grey_blue . ' gui=none'
+exec 'highlight TablineSel cterm=none guibg=' . s:blue . ' guifg=' . s:black . ' gui=none'
+exec 'highlight TablineFill cterm=none guibg=' . s:regal_blue . ' guifg=' . s:grey_blue . ' gui=none'
+exec 'highlight TablineSep cterm=none guibg=' . s:regal_blue . ' guifg=' . s:blue . ' gui=none'
+exec 'highlight TablineSep2 cterm=none guibg=' . s:blue . ' guifg=' . s:regal_blue . ' gui=none'
 exec 'highlight StatusLineTerm cterm=none guibg=' . s:slate_blue . ' guifg=' . s:white . ' gui=none'
 exec 'highlight StatusLineTermNC cterm=none guibg=' . s:slate_blue . ' guifg=' . s:cadet_blue . ' gui=none'
 if g:nightflyWinSeparator == 0
@@ -828,29 +830,6 @@ highlight! link GitGutterDelete NightflyRedAlert
 highlight! link SignifySignAdd NightflyEmeraldAlert
 highlight! link SignifySignChange NightflyYellowAlert
 highlight! link SignifySignDelete NightflyRedAlert
-
-" FZF plugin
-exec 'highlight fzf1 guifg=' . s:watermelon . ' guibg=' . s:slate_blue
-exec 'highlight fzf2 guifg=' . s:blue . ' guibg=' . s:slate_blue
-exec 'highlight fzf3 guifg=' . s:green . ' guibg=' . s:slate_blue
-exec 'highlight fzfNormal guifg=' . s:ash_blue
-exec 'highlight fzfFgPlus guifg=' . s:white_blue
-exec 'highlight fzfBorder guifg=' . s:slate_blue
-let g:fzf_colors = {
-  \  'fg':      ['fg', 'fzfNormal'],
-  \  'bg':      ['bg', 'Normal'],
-  \  'hl':      ['fg', 'Number'],
-  \  'fg+':     ['fg', 'fzfFgPlus'],
-  \  'bg+':     ['bg', 'Pmenu'],
-  \  'hl+':     ['fg', 'Number'],
-  \  'info':    ['fg', 'String'],
-  \  'border':  ['fg', 'fzfBorder'],
-  \  'prompt':  ['fg', 'fzf2'],
-  \  'pointer': ['fg', 'Exception'],
-  \  'marker':  ['fg', 'StorageClass'],
-  \  'spinner': ['fg', 'Type'],
-  \  'header':  ['fg', 'CursorLineNr']
-  \}
 
 " moonfly-statusline plugin
 exec 'highlight User1 guibg=' . s:blue       . ' guifg=' . s:dark_blue
