@@ -90,5 +90,6 @@ nnoremap <leader>n :NvimTreeFindFile<CR>
 " FZF global file search based on keywork mapping
 nnoremap <C-g> :Ag<CR>
 nnoremap <silent>sl :Buffers<CR>
+nnoremap <C-f> <Esc>:cd %:p:h<CR><Esc>:Ag<CR>
 " nnoremap <C-g> :GFiles --exclude-standard --others --cached<Cr>
 " nnoremap <expr> <C-g> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<Cr>"
