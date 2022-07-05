@@ -2,7 +2,9 @@ local M = {}
 
 M.general = {
   n = {
-      ["<C-q>"] = { "<cmd> :q! <CR>", "Exit Tab" }
+      ["<C-q>"] = { "<cmd> :q! <CR>", "Exit Tab" },
+      ["ss"] = { "<cmd> :split <CR>", "Horizontal split" },
+      ["sv"] = { "<cmd> :vsplit <CR>", "Vertical split" },
   }
 }
 
