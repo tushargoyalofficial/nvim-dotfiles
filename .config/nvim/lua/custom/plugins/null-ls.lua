@@ -12,11 +12,12 @@ local sources = {
    -- webdev stuff
    b.code_actions.eslint,
    b.code_actions.gitsigns,
-   b.formatting.prettier,
+   b.formatting.deno_fmt.with{ filetypes = { "typescript" } },
+   b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } },
    b.completion.luasnip,
    b.completion.spell,
    b.diagnostics.write_good,
-   b.diagnostics.eslint,
+   b.diagnostics.eslint.with { filetypes = { "typescriptreact", "tsx" } },
    b.diagnostics.tsc,
 
    -- Lua
@@ -34,16 +35,16 @@ null_ls.setup {
    save_after_format = false,
 
    on_attach = function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
+      if client.supports_method("textDocument/formatting") then
             vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
             vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                buffer = bufnr,
-                callback = function()
-                    -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                    vim.lsp.buf.formatting_sync()
-                end,
+               group = augroup,
+               buffer = bufnr,
+               callback = function()
+                  -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+                  vim.lsp.buf.formatting_sync()
+               end,
             })
-        end
-    end,
+      end
+   end,
 }

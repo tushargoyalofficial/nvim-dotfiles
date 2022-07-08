@@ -22,7 +22,9 @@ autocmd("FileType", {
 })
 
 -- commands
-
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
 -- I dont use shade.nvim/autosave.nvim all the time so made commands for them 
 -- So this makes easy to lazy load them at cmds
 

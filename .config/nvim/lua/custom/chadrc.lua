@@ -30,6 +30,7 @@ M.plugins = {
 M.ui = {
    theme = "ayu-dark",
    hl_add = require "custom.highlights",
+   theme_toggle = { "ayu-dark", "gruvbox_light" },
 }
 
 M.mappings = require "custom.mappings"
