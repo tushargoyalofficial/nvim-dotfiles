@@ -42,6 +42,8 @@ let g:coc_global_extensions = [
   \ 'coc-deno',
   \ ]
 
+let g:markdown_fenced_languages = ['dart', 'python', 'ruby', 'go', 'typescript']
+
 " dart-vim-plugin configs
 let g:dart_html_in_string = v:true
 let g:dart_style_guide = 2

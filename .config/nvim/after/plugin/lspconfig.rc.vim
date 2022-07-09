@@ -86,7 +86,7 @@ nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities,
-  root_dir = nvim_lsp.util.root_pattern("package.json"),
+  root_dir = nvim_lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
 }
 
 nvim_lsp.diagnosticls.setup {
