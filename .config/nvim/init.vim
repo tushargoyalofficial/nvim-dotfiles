@@ -39,6 +39,7 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-yaml',
   \ 'coc-snippets',
+  \ 'coc-deno',
   \ ]
 
 " dart-vim-plugin configs
