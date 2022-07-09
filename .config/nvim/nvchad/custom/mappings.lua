@@ -1,11 +1,11 @@
 local M = {}
 
 M.general = {
-  n = {
-      ["<C-q>"] = { "<cmd> :q! <CR>", "Exit Tab" },
-      ["ss"] = { "<cmd> :split <CR>", "Horizontal split" },
-      ["sv"] = { "<cmd> :vsplit <CR>", "Vertical split" },
-  }
+   n = {
+         ["<C-q>"] = { "<cmd> :q! <CR>", "Exit Tab" },
+         ["ss"] = { "<cmd> :split <CR>", "Horizontal split" },
+         ["sv"] = { "<cmd> :vsplit <CR>", "Vertical split" },
+   }
 }
 
 M.truzen = {
@@ -17,9 +17,9 @@ M.truzen = {
 }
 
 M.telescope = {
-  n = {
-      [";f"] = { "<cmd> Telescope find_files <CR>", "  find files" },
-  }
+   n = {
+         [";f"] = { "<cmd> Telescope find_files <CR>", "  find files" },
+   }
 }
 
 M.treesitter = {
@@ -38,12 +38,6 @@ M.shade = {
          "   toggle shade.nvim",
       },
    },
-}
-
-M.nvimtree = {
-  n = {
-      ["<sf>"] = { "<cmd> NvimTreeToggle <CR>", "   toggle nvimtree" },
-  }
 }
 
 return M

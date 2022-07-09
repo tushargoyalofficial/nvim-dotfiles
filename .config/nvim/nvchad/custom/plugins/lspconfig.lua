@@ -3,47 +3,32 @@ local M = {}
 M.setup_lsp = function(attach, capabilities)
    local lspconfig = require "lspconfig"
 
-   local servers = {
-      "cssls",
-      "dartls",
-      "denols",
-      "dockerls",
-      "emmet_ls",
-      "eslint",
-      "grammarly",
-      "graphql",
-      "html",
-      "jsonls",
-      "prismals",
-      "pyright",
-      "stylelint_lsp",
-      "sumneko_lua",
-      "svelte",
-      "tailwindcss",
-      "tsserver",
-      "vimls",
-      "vuels",
-      "yamlls"
-   }
+   local servers = { "bashls", "cssls", "denols", "emmet_ls", "eslint", "html", "pyright", "tsserver" }
 
    for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {
          on_attach = attach,
          capabilities = capabilities,
-         root_dir = lspconfig.util.root_pattern("package.json")
-         -- root_dir = vim.loop.cwd,
+         root_dir = vim.loop.cwd,
       }
    end
 
-   lspconfig.denols.setup {
+   -- eslint setup
+   require("lspconfig").eslint.setup {
+      on_attach = attach,
       capabilities = capabilities,
-      root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+      root_dir = require('lspconfig').util.root_pattern("package.json", ".eslintrc.js"),
+   }
+
+   -- deno ls setup
+   require("lspconfig").denols.setup {
+      on_attach = attach,
+      capabilities = capabilities,
+      root_dir = require('lspconfig').util.root_pattern("deno.json", "deno.jsonc"),
    }
 
    -- temporarily disable tsserver suggestions
-   lspconfig.tsserver.setup {
-      capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-
+   require("lspconfig").tsserver.setup {
       init_options = {
          preferences = {
             disableSuggestions = true,
@@ -55,9 +40,10 @@ M.setup_lsp = function(attach, capabilities)
          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
       end,
 
-      root_dir = lspconfig.util.root_pattern("package.json")
+      capabilities = capabilities,
+      root_dir = require('lspconfig').util.root_pattern("package.json", "tsconfig.json"),
+      settings = {documentFormatting = true}
    }
-
 end
 
 return M
