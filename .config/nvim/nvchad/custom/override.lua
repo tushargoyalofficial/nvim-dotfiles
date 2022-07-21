@@ -23,7 +23,7 @@ M.nvimtree = {
    },
 
    view = {
-      side = "right",
+      side = "left",
       width = 30,
    },
 

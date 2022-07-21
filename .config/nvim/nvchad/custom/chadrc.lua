@@ -28,9 +28,9 @@ M.plugins = {
 }
 
 M.ui = {
-   theme = "ayu-dark",
+   theme = "decay",
    hl_add = require "custom.highlights",
-   theme_toggle = { "ayu-dark", "gruvbox_light" },
+   theme_toggle = { "decay", "gruvbox_light" },
 }
 
 M.mappings = require "custom.mappings"
