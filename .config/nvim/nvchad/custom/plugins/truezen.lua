@@ -1,4 +1,3 @@
-
 local present, truzen = pcall(require, "true-zen")
 
 if not present then

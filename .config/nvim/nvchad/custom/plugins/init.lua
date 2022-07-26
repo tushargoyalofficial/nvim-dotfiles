@@ -28,15 +28,6 @@ return {
       end,
    },
 
-   -- notes stuff
-   ["nvim-neorg/neorg"] = {
-      ft = "norg",
-      after = "nvim-treesitter",
-      config = function()
-         require "custom.plugins.neorg"
-      end,
-   },
-
    -- get highlight group under cursor
    ["nvim-treesitter/playground"] = {
       cmd = "TSCaptureUnderCursor",
@@ -57,6 +48,27 @@ return {
       module = "autosave",
       config = function()
          require("custom.plugins.smolconfigs").autosave()
+      end,
+   },
+
+   -- notes stuff
+   ["nvim-neorg/neorg"] = {
+      ft = "norg",
+      after = "nvim-treesitter",
+      config = function()
+         require "custom.plugins.neorg"
+      end,
+   },
+
+   ["goolord/alpha-nvim"] = {
+      disable = false,
+      cmd = "Alpha",
+   },
+
+   ["neovim/nvim-lspconfig"] = {
+      config = function()
+         require "plugins.configs.lspconfig"
+         require "custom.plugins.lspconfig"
       end,
    },
 }

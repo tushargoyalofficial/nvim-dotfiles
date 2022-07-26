@@ -8,12 +8,6 @@ local M = {}
 local override = require "custom.override"
 
 M.plugins = {
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
-      },
-   },
-
    status = {
       dashboard = true,
    },
@@ -22,6 +16,8 @@ M.plugins = {
       ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
       ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
       ["lukas-reineke/indent-blankline.nvim"] = override.blankline,
+      ["goolord/alpha-nvim"] = override.alpha,
+      ["williamboman/mason"] = override.mason,
    },
 
    user = require "custom.plugins",
@@ -29,8 +25,9 @@ M.plugins = {
 
 M.ui = {
    theme = "decay",
-   hl_add = require "custom.highlights",
+   hl_add = require("custom.highlights").new_hlgroups,
    theme_toggle = { "decay", "gruvbox_light" },
+   hl_override = require("custom.highlights").overriden_hlgroups,
 }
 
 M.mappings = require "custom.mappings"

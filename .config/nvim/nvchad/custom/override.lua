@@ -4,27 +4,28 @@ local M = {}
 
 M.treesitter = {
    ensure_installed = {
-      "vim",
-      "html",
       "css",
+      "dart",
+      "dockerfile",
+      "html",
       "javascript",
-      "typescript",
       "json",
-      "toml",
-      "markdown",
       "lua",
+      "markdown",
       "norg",
+      "python",
+      "scss",
+      "toml",
+      "tsx",
+      "typescript",
+      "vim",
+      "yaml",
    },
 }
 
 M.nvimtree = {
    git = {
       enable = true,
-   },
-
-   view = {
-      side = "left",
-      width = 30,
    },
 
    renderer = {
@@ -50,6 +51,47 @@ M.blankline = {
       "lsp-installer",
       "norg",
       "",
+   },
+}
+
+M.alpha = {
+   header = {
+      val = {
+         "           ▄ ▄                   ",
+         "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
+         "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
+         "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
+         "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
+         "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄ ",
+         "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █ ",
+         "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █ ",
+         "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█     ",
+      },
+   },
+}
+
+M.mason = {
+   ensure_installed = {
+      -- lua stuff
+      "lua-language-server",
+   
+      -- web dev
+      "css-lsp",
+      "deno",
+      "diagnostic-languageserver",
+      "dockerfile-language-server",
+      "emmet-ls",
+      "eslint-lsp",
+      "html-lsp",
+      "json-lsp",
+      "prettier",
+      "pyright", -- python
+      "tailwindcss-language-server",
+      "typescript-language-server",
+   
+      -- shell
+      "bash-language-server",
+      "shellcheck",
    },
 }
 
