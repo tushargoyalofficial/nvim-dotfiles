@@ -12,7 +12,6 @@ local sources = {
    b.formatting.deno_fmt,
    b.code_actions.eslint,
    b.formatting.dart_format,
-   b.formatting.deno_fmt,
    b.formatting.prettier.with { filetypes = { "css", "html", "markdown", "javascript", "javascriptreact", "typescriptreact", } },
 
    -- Lua
