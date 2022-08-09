@@ -22,6 +22,7 @@ local options = {
                webdev = "~/Documents/notes/webdev",
                linux = "~/Documents/notes/linux",
                design = "~/Documents/notes/design",
+               personal = "~/Documents/notes/personal",
             },
          },
       },

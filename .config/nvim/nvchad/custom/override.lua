@@ -77,10 +77,8 @@ M.mason = {
    
       -- web dev
       "css-lsp",
-      "deno",
       "diagnostic-languageserver",
       "dockerfile-language-server",
-      "emmet-ls",
       "eslint-lsp",
       "html-lsp",
       "json-lsp",

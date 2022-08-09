@@ -9,7 +9,6 @@ local b = null_ls.builtins
 local sources = {
 
    -- webdev stuff
-   b.formatting.deno_fmt,
    b.code_actions.eslint,
    b.formatting.dart_format,
    b.formatting.prettier.with { filetypes = { "css", "html", "markdown", "javascript", "javascriptreact", "typescriptreact", } },
