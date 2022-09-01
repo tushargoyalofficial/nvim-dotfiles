@@ -78,8 +78,10 @@ M.mason = {
     "diagnostic-languageserver",
     "dockerfile-language-server",
     "eslint-lsp",
+    "graphql-language-service-cli",
     "html-lsp",
     "json-lsp",
+    "lua-language-server",
     "prettier",
     "pyright", -- python
     "tailwindcss-language-server",
