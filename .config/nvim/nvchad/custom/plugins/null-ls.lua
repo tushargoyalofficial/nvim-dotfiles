@@ -7,6 +7,7 @@ end
 local b = null_ls.builtins
 
 local sources = {
+
   -- webdev stuff
   b.code_actions.eslint,
 
@@ -21,6 +22,7 @@ local sources = {
   -- b.formatting.eslint,
   b.formatting.fixjson,
   b.formatting.prettier,
+
 }
 
 null_ls.setup {

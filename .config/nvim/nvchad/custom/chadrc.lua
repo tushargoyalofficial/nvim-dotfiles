@@ -5,6 +5,7 @@ M.plugins = require "custom.plugins"
 M.ui = {
   -- theme stuff
   theme = "nightowl",
+  transparency = true,
   theme_toggle = { "nightowl", "gruvbox_light" },
 
   -- highlight groups!

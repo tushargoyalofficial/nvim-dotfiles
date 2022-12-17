@@ -4,6 +4,10 @@ return {
 
   ----------------------------------------- default plugins ------------------------------------------
 
+  ["folke/which-key.nvim"] = {
+    disable = false,
+  },
+
   ["goolord/alpha-nvim"] = {
     disable = false,
     cmd = "Alpha",
@@ -18,21 +22,10 @@ return {
   },
 
   -- override default configs
-  ["kyazdani42/nvim-tree.lua"] = {
-    override_options = overrides.nvimtree,
-  },
-
-  ["nvim-treesitter/nvim-treesitter"] = {
-    override_options = overrides.treesitter,
-  },
-
-  ["lukas-reineke/indent-blankline.nvim"] = {
-    override_options = overrides.blankline,
-  },
-
-  ["williamboman/mason.nvim"] = {
-    override_options = overrides.mason,
-  },
+  ["kyazdani42/nvim-tree.lua"] = { override_options = overrides.nvimtree },
+  ["nvim-treesitter/nvim-treesitter"] = { override_options = overrides.treesitter },
+  ["lukas-reineke/indent-blankline.nvim"] = { override_options = overrides.blankline },
+  ["williamboman/mason.nvim"] = { override_options = overrides.mason },
 
   --------------------------------------------- custom plugins ----------------------------------------------
 
@@ -59,6 +52,7 @@ return {
 
   -- distraction free modes
   ["Pocco81/TrueZen.nvim"] = {
+    disable = true,
     cmd = {
       "TZAtaraxis",
       "TZMinimalist",
@@ -81,43 +75,28 @@ return {
 
   -- dim inactive windows
   ["andreadev-it/shade.nvim"] = {
-    module = "shade",
+    opt = true,
     config = function()
       require "custom.plugins.shade"
     end,
   },
 
   -- autosave
-  ["Pocco81/AutoSave.nvim"] = {
-    module = "autosave",
+  ["Pocco81/auto-save.nvim"] = {
+    opt = true,
     config = function()
-      require("autosave").setup()
+      require("auto-save").setup()
     end,
   },
 
-  -- notes & todo stuff
-  ["nvim-neorg/neorg"] = {
-    tag = "0.0.12",
-    ft = "norg",
-    after = "nvim-treesitter",
-    setup = function()
-      require("custom.plugins.neorg").autocmd()
-    end,
+  ["folke/zen-mode.nvim"] = {
+    cmd = "ZenMode",
     config = function()
-      require("custom.plugins.neorg").setup()
+      require("zen-mode").setup {
+        window = {
+          width = vim.g.zenmode, -- width will be 85% of the editor width
+        },
+      }
     end,
-  },
-
-  -- basic diagrams for flow charts etc
-  ["jbyuki/venn.nvim"] = {
-    module = "venn.nvim",
-    config = function()
-      require("custom.plugins.venn").setup()
-    end,
-  },
-
-  -- show all commands available
-  ['folke/which-key.nvim'] = {
-    disable = false,
   },
 }
