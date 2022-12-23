@@ -4,6 +4,7 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
+    "astro",
     "css",
     "dart",
     "dockerfile",
@@ -79,6 +80,7 @@ M.alpha = {
 M.mason = {
   ensure_installed = {
     -- web dev
+    "astro-language-server",
     "css-lsp",
     "diagnostic-languageserver",
     "dockerfile-language-server",

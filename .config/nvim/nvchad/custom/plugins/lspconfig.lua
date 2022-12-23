@@ -3,6 +3,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
 local servers = {
+  "astro",
   "cssls",
   "dartls",
   "dockerls",
