@@ -8,8 +8,7 @@ M.ui = {
   transparency = true,
   theme_toggle = { "nightowl", "gruvbox_light" },
 
-  -- highlight groups!
-  hl_add = require("custom.highlights").new_hlgroups,
+  -- highlight
   hl_override = require("custom.highlights").overriden_hlgroups,
 }
 
