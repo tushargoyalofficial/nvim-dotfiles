@@ -10,19 +10,17 @@ local sources = {
 
   -- webdev stuff
   b.code_actions.eslint,
-
   b.completion.vsnip,
-
-  -- b.diagnostics.eslint,
   b.diagnostics.pylint,
   b.diagnostics.stylelint,
-  -- b.diagnostics.tsc,
 
   b.formatting.dart_format,
-  -- b.formatting.eslint,
   b.formatting.fixjson,
-  b.formatting.prettier,
+  b.formatting.prettier,     -- so prettier works with all files
 
+  b.formatting.stylua,       -- Lua
+
+  b.formatting.clang_format, -- cpp
 }
 
 null_ls.setup {

@@ -1,8 +1,7 @@
-require "custom.commands"
-require "custom.autocmds"
+-- local autocmd = vim.api.nvim_create_autocmd
 
-vim.filetype.add {
-  filename = {
-    [".mkshrc"] = "sh",
-  },
-}
+-- Auto resize panes when resizing nvim window
+-- autocmd("VimResized", {
+--   pattern = "*",
+--   command = "tabdo wincmd =",
+-- })
