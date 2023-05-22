@@ -4,6 +4,7 @@ M.treesitter = {
   ensure_installed = {
     "astro",
     "css",
+    "bash",
     "dart",
     "dockerfile",
     "html",
@@ -20,6 +21,30 @@ M.treesitter = {
     "typescript",
     "vim",
     "yaml",
+  },
+  highlight = {
+    enable = true,
+    use_languagetree = true,
+  },
+  autotag = {
+    enable = true,
+    filetypes = {
+      "html",
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "tsx",
+      "jsx",
+      "rescript",
+      "css",
+      "lua",
+      "xml",
+      "php",
+      "markdown",
+    },
   },
   indent = {
     enable = true,
@@ -49,6 +74,11 @@ M.mason = {
     "tailwindcss-language-server",
     "typescript-language-server",
 
+    -- shell
+    "shfmt",
+    "shellcheck",
+    "bash-language-server",
+
     -- c/cpp stuff
     "clangd",
     "clang-format",
@@ -57,6 +87,11 @@ M.mason = {
 
 -- git support in nvimtree
 M.nvimtree = {
+  filters = {
+    dotfiles = true,
+    custom = { "node_modules" },
+  },
+
   git = {
     enable = true,
   },

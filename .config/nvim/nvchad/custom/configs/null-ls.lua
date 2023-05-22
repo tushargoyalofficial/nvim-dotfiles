@@ -14,13 +14,15 @@ local sources = {
   b.diagnostics.pylint,
   b.diagnostics.stylelint,
 
+  b.formatting.prettier, -- so prettier works only on these filetypes
   b.formatting.dart_format,
   b.formatting.fixjson,
-  b.formatting.prettier,     -- so prettier works with all files
 
-  b.formatting.stylua,       -- Lua
+  -- Lua
+  b.formatting.stylua,
 
-  b.formatting.clang_format, -- cpp
+  -- cpp
+  b.formatting.clang_format,
 }
 
 null_ls.setup {
