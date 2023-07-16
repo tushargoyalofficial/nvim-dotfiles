@@ -3,83 +3,83 @@
 local M = {}
 
 M.treesitter = {
-  ensure_installed = {
-    "astro",
-    "css",
-    "bash",
-    "dart",
-    "dockerfile",
-    "html",
-    "graphql",
-    "javascript",
-    "json",
-    "lua",
-    "markdown",
-    "markdown_inline",
-    "python",
-    "scss",
-    "toml",
-    "tsx",
-    "typescript",
-    "vim",
-    "yaml",
-  },
+	ensure_installed = {
+		"astro",
+		"css",
+		"bash",
+		"dart",
+		"dockerfile",
+		"html",
+		"graphql",
+		"javascript",
+		"json",
+		"lua",
+		"markdown",
+		"markdown_inline",
+		"python",
+		"scss",
+		"toml",
+		"tsx",
+		"typescript",
+		"vim",
+		"yaml",
+	},
 }
 
 M.nvimtree = {
-  filters = {
-    dotfiles = false,
-    custom = { "node_modules" },
-  },
+	filters = {
+		dotfiles = false,
+		custom = { "node_modules" },
+	},
 
-  git = {
-    enable = true,
-  },
+	git = {
+		enable = true,
+	},
 
-  renderer = {
-    highlight_git = true,
-    icons = {
-      show = {
-        git = true,
-      },
-    },
-  },
+	renderer = {
+		highlight_git = true,
+		icons = {
+			show = {
+				git = true,
+			},
+		},
+	},
 }
 
 M.mason = {
-  ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
+	ensure_installed = {
+		-- lua stuff
+		"lua-language-server",
+		"stylua",
 
-    -- web dev stuff
-    "astro-language-server",
-    "css-lsp",
-    "diagnostic-languageserver",
-    "dockerfile-language-server",
-    "eslint-lsp",
-    "graphql-language-service-cli",
-    "html-lsp",
-    "json-lsp",
-    "prettier",
-    "tailwindcss-language-server",
-    "typescript-language-server",
+		-- web dev stuff
+		"astro-language-server",
+		"css-lsp",
+		"diagnostic-languageserver",
+		"dockerfile-language-server",
+		"eslint-lsp",
+		"graphql-language-service-cli",
+		"html-lsp",
+		"json-lsp",
+		"prettier",
+		"tailwindcss-language-server",
+		"typescript-language-server",
 
-    -- python stuff
-    "black",
-    "mypy",
-    "pyright",
-    "ruff",
+		-- python stuff
+		"black",
+		"mypy",
+		"pyright",
+		"ruff",
 
-    -- shell
-    "shfmt",
-    "shellcheck",
-    "bash-language-server",
+		-- shell
+		"shfmt",
+		"shellcheck",
+		"bash-language-server",
 
-    -- c/cpp stuff
-    "clangd",
-    "clang-format",
-  },
+		-- c/cpp stuff
+		"clangd",
+		"clang-format",
+	},
 }
 
 return M
