@@ -1,3 +1,5 @@
+-- overriding default plugin configs!
+
 local M = {}
 
 M.treesitter = {
@@ -22,35 +24,25 @@ M.treesitter = {
     "vim",
     "yaml",
   },
-  highlight = {
-    enable = true,
-    use_languagetree = true,
+}
+
+M.nvimtree = {
+  filters = {
+    dotfiles = false,
+    custom = { "node_modules" },
   },
-  autotag = {
+
+  git = {
     enable = true,
-    filetypes = {
-      "html",
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact",
-      "svelte",
-      "vue",
-      "tsx",
-      "jsx",
-      "rescript",
-      "css",
-      "lua",
-      "xml",
-      "php",
-      "markdown",
+  },
+
+  renderer = {
+    highlight_git = true,
+    icons = {
+      show = {
+        git = true,
+      },
     },
-  },
-  indent = {
-    enable = true,
-    -- disable = {
-    --   "python"
-    -- },
   },
 }
 
@@ -70,9 +62,14 @@ M.mason = {
     "html-lsp",
     "json-lsp",
     "prettier",
-    "pyright", -- python
     "tailwindcss-language-server",
     "typescript-language-server",
+
+    -- python stuff
+    "black",
+    "mypy",
+    "pyright",
+    "ruff",
 
     -- shell
     "shfmt",
@@ -82,27 +79,6 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
-  },
-}
-
--- git support in nvimtree
-M.nvimtree = {
-  filters = {
-    dotfiles = true,
-    custom = { "node_modules" },
-  },
-
-  git = {
-    enable = true,
-  },
-
-  renderer = {
-    highlight_git = true,
-    icons = {
-      show = {
-        git = true,
-      },
-    },
   },
 }
 

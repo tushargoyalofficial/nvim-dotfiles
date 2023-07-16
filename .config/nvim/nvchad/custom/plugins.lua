@@ -93,4 +93,13 @@ return {
       vim.opt.ft = "yuck"
     end,
   },
+
+  -- Lua
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    config = function()
+      require "custom.configs.zenmode"
+    end,
+  },
 }

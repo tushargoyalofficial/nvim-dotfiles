@@ -1,28 +1,42 @@
-local present, null_ls = pcall(require, "null-ls")
-
-if not present then
-  return
-end
+local null_ls = require "null-ls"
 
 local b = null_ls.builtins
+local codeaction = b.code_actions
+local completion = b.completion
+local format = b.formatting
+local lint = b.diagnostics
 
 local sources = {
 
   -- webdev stuff
-  b.code_actions.eslint,
-  b.completion.vsnip,
-  b.diagnostics.pylint,
-  b.diagnostics.stylelint,
+  codeaction.eslint,
+  completion.vsnip,
+  lint.stylelint,
+  format.prettier,
+  format.fixjson,
 
-  b.formatting.prettier, -- so prettier works only on these filetypes
-  b.formatting.dart_format,
-  b.formatting.fixjson,
+  -- Dart/Flutter
+  format.dart_format,
+
+  -- Pythons
+  format.black,
+  lint.mypy.with({
+    extra_args = function()
+    local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_DEFAULT_ENV") or "/usr"
+    return { "--python-executable", virtual .. "/bin/python3" }
+    end,
+  }),
+  lint.ruff,
 
   -- Lua
-  b.formatting.stylua,
+  format.stylua,
+
+  -- Shell
+  format.shfmt,
+  lint.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
 
   -- cpp
-  b.formatting.clang_format,
+  format.clang_format,
 }
 
 null_ls.setup {
