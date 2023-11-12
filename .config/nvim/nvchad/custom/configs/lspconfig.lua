@@ -12,6 +12,7 @@ local servers = {
 	"graphql",
 	"html",
 	"jsonls",
+	"prismals",
 	"pyright",
 	"tailwindcss",
 	"tsserver",
