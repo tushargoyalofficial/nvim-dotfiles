@@ -1,43 +1,56 @@
 local M = {}
 
 M.general = {
-	n = {
-		[";"] = { ":", "command mode", opts = { nowait = true } },
-	},
-
-	i = {
-		["jk"] = { "<ESC>", "escape insert mode" },
-	},
-}
-
-M.treesitter = {
-	n = {
-		["<leader>cu"] = { "<cmd> TSCaptureUnderCursor <CR>", "find media" },
-	},
+  n = {
+    [";"] = { ":", "enter command mode", opts = { nowait = true } },
+  },
+  i = {
+    ["jk"] = { "<ESC>", "escape insert mode" },
+  },
 }
 
 M.shade = {
-	n = {
-		["<Bslash>"] = {
-			function()
-				require("shade").toggle()
-			end,
+  n = {
+    ["<Bslash>"] = {
+      function()
+        require("shade").toggle()
+      end,
 
-			"toggle shade.nvim",
-		},
-	},
+      "toggle shade.nvim",
+    },
+  },
 }
 
-M.nvterm = {
-	n = {
-		["<leader>gc"] = {
-			function()
-				require("nvterm.terminal").send("clear && g++ -o out " .. vim.fn.expand("%") .. " && ./out", "vertical")
-			end,
+M.lsp = {
+  n = {
+    ["<leader>fm"] = {
 
-			"compile & run a cpp file",
-		},
-	},
+      function()
+        require("conform").format()
+      end,
+      "format with conform",
+    },
+  },
 }
+
+-- M.nvterm = {
+--   n = {
+--     ["<leader>gc"] = {
+--
+--       function()
+--         local file = vim.fn.expand "%"
+--
+--         local fts = {
+--           cpp = "clear && g++ -o out " .. file .. " && ./out",
+--           python = "some command",
+--         }
+--
+--         require("nvterm.terminal").send(fts[vim.bo.ft], "vertical")
+--       end,
+--
+--       "run commands based on current filetype",
+--     },
+--   },
+-- }
 
 return M

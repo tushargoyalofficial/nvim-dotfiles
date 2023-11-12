@@ -1,105 +1,149 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 return {
 
-	----------------------------------------- default plugins ------------------------------------------
-	{
-		"hrsh7th/nvim-cmp",
-		opts = {
-			sources = {
-				-- trigger_characters is for unocss lsp
-				{ name = "nvim_lsp", trigger_characters = { "-" } },
-				{ name = "luasnip" },
-				{ name = "buffer" },
-				{ name = "nvim_lua" },
-				{ name = "path" },
-			},
-		},
-	},
+  ----------------------------------------- default plugins -----------------------------------------
 
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			{
-				-- format & linting
-				"jose-elias-alvarez/null-ls.nvim",
-				config = function()
-					require("custom.configs.null-ls")
-				end,
-			},
-		},
+  {
+    "gpanders/nvim-parinfer",
+    event = "InsertEnter",
+  },
 
-		config = function()
-			require("plugins.configs.lspconfig")
-			require("custom.configs.lspconfig")
-		end,
-	},
+  {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
 
-	-- override default configs
-	{ "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
-	{ "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
-	{ "williamboman/mason.nvim", opts = overrides.mason },
+    dependencies = {
+      {
+        -- snippet plugin
+        "L3MON4D3/LuaSnip",
+        config = function(_, opts)
+          -- load default luasnip config
+          require("plugins.configs.others").luasnip(opts)
 
-	--------------------------------------------- custom plugins ----------------------------------------------
+          local luasnip = require "luasnip"
+          luasnip.filetype_extend("javascriptreact", { "html" })
+          luasnip.filetype_extend("typescriptreact", { "html" })
+          require("luasnip/loaders/from_vscode").lazy_load()
+        end,
+      },
 
-	{
-		"karb94/neoscroll.nvim",
-		keys = { "<C-d>", "<C-u>" },
-		config = function()
-			require("neoscroll").setup()
-		end,
-	},
+      -- ai based completion
+      {
+        "jcdickinson/codeium.nvim",
+        config = function()
+          require("codeium").setup {}
+        end,
+      },
+    },
+  },
 
-	-- autoclose tags in html, jsx only
-	{
-		"windwp/nvim-ts-autotag",
-		event = "InsertEnter",
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
-	},
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "pmizio/typescript-tools.nvim",
+    },
 
-	-- get highlight group under cursor
-	{
-		"nvim-treesitter/playground",
-		cmd = "TSCaptureUnderCursor",
-		config = function()
-			require("nvim-treesitter.configs").setup()
-		end,
-	},
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
+  },
 
-	-- dim inactive windows
-	{
-		"andreadev-it/shade.nvim",
-		keys = "<Bslash>",
-		config = function()
-			require("shade").setup({
-				exclude_filetypes = { "NvimTree" },
-			})
-		end,
-	},
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require "custom.configs.conform"
+    end,
+  },
 
-	{
-		"folke/trouble.nvim",
-		cmd = "Trouble",
-		config = function()
-			require("trouble").setup()
-		end,
-	},
+  -- override default configs
+  { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
 
-	{
-		"elkowar/yuck.vim",
-		config = function()
-			vim.opt.ft = "yuck"
-		end,
-	},
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = overrides.treesitter,
 
-	-- Lua
-	{
-		"folke/zen-mode.nvim",
-		cmd = "ZenMode",
-		config = function()
-			require("custom.configs.zenmode")
-		end,
-	},
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "syntax")
+      require("nvim-treesitter.configs").setup(opts)
+
+      -- register mdx ft
+      vim.filetype.add {
+        extension = { mdx = "mdx" },
+      }
+
+      vim.treesitter.language.register("markdown", "mdx")
+    end,
+  },
+
+  -- autoclose tags in html, jsx only
+  {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+
+  {
+    "numToStr/Comment.nvim",
+    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+  },
+
+  { "williamboman/mason.nvim", opts = overrides.mason },
+
+  --------------------------------------------- custom plugins ----------------------------------------------
+  -- smooth scroll
+  {
+    "karb94/neoscroll.nvim",
+    keys = { "<C-d>", "<C-u>" },
+    config = function()
+      require("neoscroll").setup()
+    end,
+  },
+
+  -- dim inactive windows
+  {
+    "andreadev-it/shade.nvim",
+    config = function()
+      require("shade").setup {
+        exclude_filetypes = { "NvimTree" },
+      }
+    end,
+  },
+
+  -- pretty diagnostics panel
+  {
+    "folke/trouble.nvim",
+    cmd = "Trouble",
+    config = function()
+      require("trouble").setup()
+    end,
+  },
+
+  -- syntax support fgor yuck lang
+  {
+    "elkowar/yuck.vim",
+    ft = "yuck",
+  },
+
+  -- distraction free mode
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    config = function()
+      require "custom.configs.zenmode"
+    end,
+  },
+
+  {
+    "mbbill/undotree",
+    cmd = "UndotreeToggle",
+  },
 }
