@@ -7,12 +7,17 @@ M.ui = {
 	transparency = false,
 
 	tabufline = {
-    lazyload = false,
-  },
+		lazyload = false,
+	},
+
+	-- nvdash (dashboard)
+	nvdash = {
+		load_on_startup = true,
+	},
 }
 
 M.plugins = "custom.plugins"
 
-M.mappings = require "custom.mappings"
+M.mappings = require("custom.mappings")
 
 return M
