@@ -4,11 +4,13 @@ require "custom.autocmds"
 
 local opt = vim.opt
 opt.title = true
+opt.foldmethod="expr"
+opt.foldexpr="nvim_treesitter#foldexpr()"
 
 if vim.g.neovide then
   vim.o.guifont = "FiraCode Nerd Font:h10"
 
-  vim.g.neovide_refresh_rate = 75
+  vim.g.neovide_refresh_rate = 120
 
   vim.g.neovide_cursor_vfx_mode = "railgun"
 

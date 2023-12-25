@@ -80,6 +80,16 @@ return {
   -- autoclose tags in html, jsx only
   {
     "windwp/nvim-ts-autotag",
+    filetypes = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "html",
+      "svelte",
+      "vue",
+      "markdown"
+    },
     event = "InsertEnter",
     config = function()
       require("nvim-ts-autotag").setup()

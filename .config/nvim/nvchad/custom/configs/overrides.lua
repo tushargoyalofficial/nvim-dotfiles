@@ -4,7 +4,6 @@ local M = {}
 
 M.treesitter = {
 	ensure_installed = {
-		"astro",
 		"css",
 		"bash",
 		"dart",
@@ -16,7 +15,7 @@ M.treesitter = {
 		"lua",
 		"markdown",
 		"markdown_inline",
-    "prisma",
+		"prisma",
 		"python",
 		"scss",
 		"toml",
@@ -25,25 +24,41 @@ M.treesitter = {
 		"vim",
 		"yaml",
 	},
+	autotag = {
+		enable = true,
+		enable_rename = true,
+		enable_close = true,
+		enable_close_on_slash = true,
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"html",
+			"svelte",
+			"vue",
+			"markdown",
+		},
+	},
 }
 
 M.nvimtree = {
-  filters = {
-    dotfiles = true,
-    custom = { "node_modules" },
-  },
-  git = {
-    enable = true,
-    ignore = true,
-  },
-  renderer = {
-    highlight_git = true,
-    icons = {
-      show = {
-        git = true,
-      },
-    },
-  },
+	filters = {
+		dotfiles = false,
+		custom = { "node_modules" },
+	},
+	git = {
+		enable = true,
+		ignore = true,
+	},
+	renderer = {
+		highlight_git = true,
+		icons = {
+			show = {
+				git = true,
+			},
+		},
+	},
 }
 
 M.mason = {
@@ -53,16 +68,14 @@ M.mason = {
 		"stylua",
 
 		-- web dev stuff
-		"astro-language-server",
 		"css-lsp",
-		"diagnostic-languageserver",
 		"dockerfile-language-server",
 		"eslint-lsp",
 		"graphql-language-service-cli",
 		"html-lsp",
 		"json-lsp",
-    "prisma-language-server",
-		"prettier",
+		"prisma-language-server",
+		"prettierd",
 		"tailwindcss-language-server",
 		"typescript-language-server",
 
@@ -80,6 +93,21 @@ M.mason = {
 		-- c/cpp stuff
 		"clangd",
 		"clang-format",
+	},
+}
+
+M.cmp = {
+	sources = {
+		-- trigger_characters is for unocss lsp
+		{ name = "nvim_lsp", trigger_characters = { "-" } },
+		{ name = "path" },
+		{ name = "luasnip" },
+		{ name = "buffer" },
+		{ name = "codeium" },
+		{ name = "nvim_lua" },
+	},
+	experimental = {
+		ghost_text = true,
 	},
 }
 
